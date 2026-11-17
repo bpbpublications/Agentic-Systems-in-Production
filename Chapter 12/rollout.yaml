@@ -1,0 +1,16 @@
+rollout:
+  strategy: canary
+  steps:
+    - traffic: 5
+      hold_minutes: 15
+    - traffic: 20
+      hold_minutes: 30
+    - traffic: 50
+      hold_minutes: 30
+  gates:
+    p95_latency_ms: "<= 2500"
+    error_rate: "<= 1%"
+    task_success: ">= 92%"
+  rollback:
+    on_gate_fail: true
+    target_version: blue

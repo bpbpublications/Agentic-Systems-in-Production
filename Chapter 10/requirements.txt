@@ -1,0 +1,4 @@
+ipykernel>=6.29
+langgraph>=1.2
+mcp>=1.29
+fastmcp>=3.4

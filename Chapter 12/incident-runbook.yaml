@@ -1,0 +1,13 @@
+incident: model_timeout
+detect:
+  - p95_latency_ms > 15000 for 10m
+  - timeout_rate > 5%
+mitigate:
+  - switch_model: "fallback-small"
+  - reduce_max_tokens: 4000
+  - disable_optional_tools: true
+rollback:
+  - revert_release: previous_stable
+escalate:
+  - oncall_ml
+  - platform_oncall

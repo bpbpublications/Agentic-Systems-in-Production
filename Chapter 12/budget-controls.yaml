@@ -1,0 +1,6 @@
+budget_controls:
+  max_cost_per_run_usd: 0.50
+  max_tool_calls: 8
+  max_retries: 2
+  max_tokens: 12000
+  on_limit_hit: "fallback_to_small_model"

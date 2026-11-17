@@ -1,0 +1,11 @@
+placement:
+  cloud:
+    - api-gateway
+    - planner
+    - global-observability
+  on_prem:
+    - erp-connector
+    - private-document-index
+  edge:
+    - speech-to-text
+    - camera-event-filter
